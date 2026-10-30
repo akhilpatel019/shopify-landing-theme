@@ -1,0 +1,152 @@
+
+{% render 'section-styles', section: section %}
+
+ {{ 'marquee.css' | asset_url | stylesheet_tag }}
+
+
+
+<section class="hero-text-slider">
+  <div class="slider-track">
+
+    {% for i in (1..2) %}
+      <div class="slider-group" {% if i == 2 %}aria-hidden="true"{% endif %}>
+        {% for block in section.blocks %}
+          {% if block.type == 'text_item' %}
+            <span class="slider-item" {% if i == 1 %}{{ block.shopify_attributes }}{% endif %}>
+              {{ block.settings.text }}
+            </span>
+            <span class="slider-divider">//</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endfor %}
+
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Hero Text Slider",
+  "settings": [ 
+        {
+        "type": "header",
+        "content": "Spacing"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top (desktop)",
+        "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding bottom (desktop)",
+        "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "label": "Padding top (mobile)",
+        "min": 0, "max": 200, "step": 2, "unit": "px", "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "label": "Padding bottom (mobile)",
+        "min": 0, "max": 200, "step": 2, "unit": "px", "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Background"
+      },
+      {
+        "type": "select",
+        "id": "bg_type",
+        "label": "Background type",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "color", "label": "Color" },
+          { "value": "gradient", "label": "Gradient" },
+          { "value": "image", "label": "Image" }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#FDF6F4",
+        "visible_if": "{{ section.settings.bg_type == 'color' }}"
+      },
+      {
+        "type": "color_background",
+        "id": "bg_gradient",
+        "label": "Background gradient",
+        "visible_if": "{{ section.settings.bg_type == 'gradient' }}"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background image",
+        "visible_if": "{{ section.settings.bg_type == 'image' }}"
+      }
+  ],
+  "blocks": [
+    {
+      "type": "text_item",
+      "name": "Scrolling text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "FAST DISSOLVING"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Hero Text Slider",
+      "blocks": [
+        {
+          "type": "text_item"
+        },
+        {
+          "type": "text_item",
+          "settings": {
+            "text": "GMP CERTIFIED"
+          }
+        },
+        {
+          "type": "text_item",
+          "settings": {
+            "text": "ZERO SUGAR"
+          }
+        },
+        {
+          "type": "text_item",
+          "settings": {
+            "text": "6 ESSENTIAL ELECTROLYTES"
+          }
+        },
+        {
+          "type": "text_item",
+          "settings": {
+            "text": "3RD-PARTY TESTED"
+          }
+        },
+        {
+          "type": "text_item",
+          "settings": {
+            "text": "MADE IN THE USA"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

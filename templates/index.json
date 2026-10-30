@@ -29,9 +29,69 @@
         "bg_color": "#fdf6f4",
         "bg_gradient": "linear-gradient(90deg, rgb(233, 229, 243) 0%, rgb(205, 195, 229) 100%)"
       }
+    },
+    "marquee_slider_DRH94h": {
+      "type": "marquee-slider",
+      "blocks": {
+        "text_item_XyGqnP": {
+          "type": "text_item",
+          "settings": {
+            "text": "FAST DISSOLVING"
+          }
+        },
+        "text_item_YFp8jC": {
+          "type": "text_item",
+          "settings": {
+            "text": "GMP CERTIFIED"
+          }
+        },
+        "text_item_nTeKz7": {
+          "type": "text_item",
+          "settings": {
+            "text": "ZERO SUGAR"
+          }
+        },
+        "text_item_PzzwRB": {
+          "type": "text_item",
+          "settings": {
+            "text": "6 ESSENTIAL ELECTROLYTES"
+          }
+        },
+        "text_item_pn6JmD": {
+          "type": "text_item",
+          "settings": {
+            "text": "3RD-PARTY TESTED"
+          }
+        },
+        "text_item_tQCKaU": {
+          "type": "text_item",
+          "settings": {
+            "text": "MADE IN THE USA"
+          }
+        }
+      },
+      "block_order": [
+        "text_item_XyGqnP",
+        "text_item_YFp8jC",
+        "text_item_nTeKz7",
+        "text_item_PzzwRB",
+        "text_item_pn6JmD",
+        "text_item_tQCKaU"
+      ],
+      "name": "Hero Text Slider",
+      "settings": {
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_top_mobile": 18,
+        "padding_bottom_mobile": 18,
+        "bg_type": "color",
+        "bg_color": "#cdc3e5",
+        "bg_gradient": ""
+      }
     }
   },
   "order": [
-    "main_hero_section_HJemKV"
+    "main_hero_section_HJemKV",
+    "marquee_slider_DRH94h"
   ]
 }
