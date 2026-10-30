@@ -12,13 +12,8 @@
     "settings": [
       {
         "type": "image_picker",
-        "label": "Add your store logo",
-        "id": "store_logo"
-      },
-      {
-        "type": "image_picker",
-        "label": "Add Footer Logo",
-        "id": "store_footer_logo"
+        "label": "Add your site favicon icon",
+        "id": "favicon_icon"
       },
       {
         "type": "range",

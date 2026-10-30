@@ -29,7 +29,19 @@
         "block_order": [
           "announcement_bar_hhWU9M"
         ],
-        "settings": {}
+        "settings": {
+          "header_bg_color": "#e7e3f1",
+          "header_font": "radio_canada_big_n4",
+          "header_left_side_menu": "header_menu_left",
+          "header_logo": "shopify://shop_images/Frame_104_1.png",
+          "header_right_side_menu": "header_menu_right",
+          "header_padding_top_bottom": 16,
+          "header_padding_left_right": 32,
+          "header_padding_top_bottom_mob": 16,
+          "header_padding_left_right_mob": 32,
+          "mobile_menu_logo": "shopify://shop_images/Frame_104_1.png",
+          "mobile_menu": "mobile_menu"
+        }
       }
     },
     "content_for_index": []

@@ -1,13 +1,249 @@
+{% style  %}  
 
-<header>
+    {{section.settings.header_font |  font_face}}
 
+   .main-header{
+    background-color: {{section.settings.header_bg_color}};
+    font-family: {{section.settings.header_font.family}}
+   }
+
+
+    .page_header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:{{section.settings.header_padding_top_bottom}}px {{section.settings.header_padding_left_right}}px;
+    width: 100%;
+    }
+
+      .page_header .header-left,
+      .page_header .header-right,
+      .page_header .header-logo-wrapper{
+        display: contents;
+    }
+
+    .page_header .header-left a,
+      .page_header .header-right a{
+        text-decoration: none;
+        color: #1D0930;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        cursor: pointer;
+        font-family: inherit;
+        text-transform: uppercase;
+      }
+
+      .page_header .header-logo a{
+            text-decoration: none;
+             cursor: pointer;
+      }
+
+         .page_header .header-logo-wrapper .header-logo{
+                width: 100%;
+                max-width: 120px;
+                object-fit: cover;
+                height: auto;
+         }
+
+
+
+    /* Mobile header */
+    .menu-toggle{
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .menu-toggle svg{
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Offcanvas menu */
+    .menu-overlay{
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 998;
+    }
+
+    .menu-overlay.active{
+      display: block;
+    }
+
+    .offcanvas-menu{
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100%;
+      background: #fff;
+      z-index: 999;
+      transition: right 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .offcanvas-menu.active{
+      right: 0;
+    }
+
+    .offcanvas-header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .offcanvas-logo{
+      max-width: 100px;
+      height: auto;
+    }
+
+    .close-menu{
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #1D0930;
+      line-height: 1;
+    }
+
+    .offcanvas-links{
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .offcanvas-links a{
+      text-decoration: none;
+      color: #1D0930;
+      font-weight: 500;
+      font-size: 16px;
+      text-transform: uppercase;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+      font-family: inherit;
+    }
+
+    @media (max-width: 768px){
+      .page_header .header-left,
+      .page_header .header-right{
+        display: none !important;
+      }
+
+      .page_header .header-logo-wrapper{
+        display: flex !important;
+      }
+
+      .page_header{
+        justify-content: space-between;
+          padding:{{section.settings.header_padding_top_bottom_mob}}px {{section.settings.header_padding_left_right_mob}}px;
+      }
+
+      .menu-toggle{
+        display: block;
+      }
+    }
+{% endstyle %}
+
+
+
+<header class="main-header">
+  <div class="header_wrapper">
 
     {% for block in section.blocks %}
-  {% case block.type %}
-    {% when 'announcement-bar' %}
-      {% render 'announcement-bar', block: block %}
-  {% endcase %}
-{% endfor %}
+      {% case block.type %}
+        {% when 'announcement-bar' %}
+          {% render 'announcement-bar'
+            , block: block %}
+      {% endcase %}
+    {% endfor %}
+
+    <nav class="page_header page_width">
+
+      <div class="header-left">
+
+    {% assign left_menu = section.settings.header_left_side_menu %} 
+
+    {% for link in left_menu.links %}
+        <a href="{{link.url}}">
+            {{link.title |  upcase }}
+        </a>
+        {% endfor %}
+
+      </div>
+
+      <div class="header-logo-wrapper">
+
+      <a href="{{ routes.root_url }}">
+  {% if section.settings.header_logo != blank %}
+    {{
+      section.settings.header_logo
+      | image_url: width: 300
+      | image_tag: alt: shop.name, class: 'header-logo'
+    }}
+  {% endif %}
+</a>
+
+      </div>
+
+      <div class="header-right">
+        {% assign right_menu = section.settings.header_right_side_menu %} 
+
+         {% for link in right_menu.links %}
+        <a href="{{link.url}}">
+            {{link.title |  upcase}}
+        </a>
+        {% endfor %}
+
+         <a href="#">
+           Cart(0)
+        </a>
+
+      </div>
+
+
+      <button class="menu-toggle" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#1D0930" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </nav>
+
+  </div>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <div class="offcanvas-menu" id="offcanvasMenu">
+    <div class="offcanvas-header">
+       {% if section.settings.mobile_menu_logo != blank %}
+    {{
+      section.settings.mobile_menu_logo
+      | image_url: width: 200
+      | image_tag: alt: shop.name, class: 'offcanvas-logo'
+    }}
+       {% endif %}
+      <button class="close-menu" id="closeMenu" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="offcanvas-links">
+
+    {% assign mobile_menu  = section.settings.mobile_menu.links %}
+    {% for link in mobile_menu %}
+ <a href="{{link.url}}">{{link.title}}</a>
+      {% endfor %}
+      <a href="#">cart (0)</a>
+    </div>
+  </div>
+
+ 
+
 
 
 
@@ -15,101 +251,188 @@
 </header>
 
 
+<script src="{{ 'mobile_menu.js' | asset_url }}" defer></script>
 
 
 
 {% schema %}
-{
-  "name": "Header",
-  "tag": "header",
-  "settings": [],
-  "blocks": [
-    {
-      "type": "announcement-bar",
-      "name": "Announcement Bar",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "header",
-          "content": "Announcement bar settings"
-        },
-        {
-          "type": "text",
-          "default": "Free shipping for first-time subscribers",
-          "label": "Add text for announcement bar",
-          "id": "announcement_bar_text",
-          "placeholder": "Add text here...."
-        },
+  {
+    "name": "Header",
+    "tag": "header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header settings"
+      },
+      {
+        "type": "color",
+        "label": "Set header bg color",
+        "id": "header_bg_color"
+      },
 
-        {
+       {
       "type": "font_picker",
-      "label": "Set text font",
-      "id": "announcement_text",
+      "label": "Slect header font",
+      "id": "header_font",
       "default": "sans-serif"
     },
 
        {
-          "type": "color",
-          "label": "Set announcement bg color",
-          "id": "announcement_bg_color"
-        },
-        {
-          "type": "header",
-          "content": "Announcement bar spacing for desktop"
-        },
+      "type": "link_list",
+      "label": "Select left side menu",
+      "id": "header_left_side_menu"
+    },
 
-        {
-          "type": "range",
-          "id": "bar_padding_top_bottom",
-          "label": "Set top and bottom spacing",
-          "min": 0,
-          "max": 20,
-          "step": 1,
-          "default": 10,
-          "unit": "px"
-        },
-        {
-          "type": "range",
-          "id": "bar_padding_left_right",
-          "label": "Set left and right spacing",
-          "min": 0,
-          "max": 20,
-          "step": 1,
-          "default": 10,
-          "unit": "px"
-        },
-        {
-          "type": "header",
-          "content": "Announcement bar spacing for Mobile"
-        },
-
-        {
-          "type": "range",
-          "id": "bar_padding_top_bottom_mob",
-          "label": "Set top and bottom spacing",
-          "min": 0,
-          "max": 20,
-          "step": 1,
-          "default": 10,
-          "unit": "px"
-        },
-        {
-          "type": "range",
-          "id": "bar_padding_left_right_mob",
-          "label": "Set left and right spacing",
-          "min": 0,
-          "max": 20,
-          "step": 1,
-          "default": 10,
-          "unit": "px"
-        }
-      ]
-    }
-  ],
-  "presets": [
     {
-      "name": "Header"
-    }
-  ]
-}
+      "type": "image_picker",
+      "label": "Select header logo",
+      "id": "header_logo"
+    },
+    {
+      "type": "link_list",
+      "label": "Select right side menu",
+      "id": "header_right_side_menu"
+    },
+      {
+        "type": "header",
+        "content": "Header spacing for Desktop"
+      },
+      {
+        "type": "range",
+        "id": "header_padding_top_bottom",
+        "label": "Set top and bottom spacing",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+      }, {
+        "type": "range",
+        "id": "header_padding_left_right",
+        "label": "Set left and right spacing",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+      }, {
+        "type": "header",
+        "content": "Header spacing for Mobile"
+      }, {
+        "type": "range",
+        "id": "header_padding_top_bottom_mob",
+        "label": "Set top and bottom spacing",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 15,
+        "unit": "px"
+      }, {
+        "type": "range",
+        "id": "header_padding_left_right_mob",
+        "label": "Set left and right spacing",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 15,
+        "unit": "px"
+      },
+
+      {
+        "type": "header",
+        "content": "Mobile header Settings"
+      },
+      {
+      "type": "image_picker",
+      "label": "Select mobile menu logo",
+      "id": "mobile_menu_logo"
+      },
+      {
+      "type": "link_list",
+      "label": "Select mobile menu",
+      "id": "mobile_menu"
+      }
+
+    ],
+    "blocks": [
+      {
+        "type": "announcement-bar",
+        "name": "Announcement Bar",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Announcement bar settings"
+          },
+          {
+            "type": "text",
+            "default": "Free shipping for first-time subscribers",
+            "label": "Add text for announcement bar",
+            "id": "announcement_bar_text",
+            "placeholder": "Add text here...."
+          },
+
+          {
+            "type": "font_picker",
+            "label": "Set text font",
+            "id": "announcement_text",
+            "default": "sans-serif"
+          },
+
+          {
+            "type": "color",
+            "label": "Set announcement bg color",
+            "id": "announcement_bg_color"
+          }, {
+            "type": "header",
+            "content": "Announcement bar spacing for desktop"
+          }, {
+            "type": "range",
+            "id": "bar_padding_top_bottom",
+            "label": "Set top and bottom spacing",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 10,
+            "unit": "px"
+          }, {
+            "type": "range",
+            "id": "bar_padding_left_right",
+            "label": "Set left and right spacing",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 10,
+            "unit": "px"
+          }, {
+            "type": "header",
+            "content": "Announcement bar spacing for Mobile"
+          }, {
+            "type": "range",
+            "id": "bar_padding_top_bottom_mob",
+            "label": "Set top and bottom spacing",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 10,
+            "unit": "px"
+          }, {
+            "type": "range",
+            "id": "bar_padding_left_right_mob",
+            "label": "Set left and right spacing",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 10,
+            "unit": "px"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Header"
+      }
+    ]
+  }
 {% endschema %}
