@@ -1,0 +1,115 @@
+
+<header>
+
+
+    {% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'announcement-bar' %}
+      {% render 'announcement-bar', block: block %}
+  {% endcase %}
+{% endfor %}
+
+
+
+
+</header>
+
+
+
+
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "header",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "announcement-bar",
+      "name": "Announcement Bar",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Announcement bar settings"
+        },
+        {
+          "type": "text",
+          "default": "Free shipping for first-time subscribers",
+          "label": "Add text for announcement bar",
+          "id": "announcement_bar_text",
+          "placeholder": "Add text here...."
+        },
+
+        {
+      "type": "font_picker",
+      "label": "Set text font",
+      "id": "announcement_text",
+      "default": "sans-serif"
+    },
+
+       {
+          "type": "color",
+          "label": "Set announcement bg color",
+          "id": "announcement_bg_color"
+        },
+        {
+          "type": "header",
+          "content": "Announcement bar spacing for desktop"
+        },
+
+        {
+          "type": "range",
+          "id": "bar_padding_top_bottom",
+          "label": "Set top and bottom spacing",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "default": 10,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "bar_padding_left_right",
+          "label": "Set left and right spacing",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "default": 10,
+          "unit": "px"
+        },
+        {
+          "type": "header",
+          "content": "Announcement bar spacing for Mobile"
+        },
+
+        {
+          "type": "range",
+          "id": "bar_padding_top_bottom_mob",
+          "label": "Set top and bottom spacing",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "default": 10,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "bar_padding_left_right_mob",
+          "label": "Set left and right spacing",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "default": 10,
+          "unit": "px"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header"
+    }
+  ]
+}
+{% endschema %}

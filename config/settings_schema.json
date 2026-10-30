@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Landing Page",
+    "theme_version": "1.0",
+    "theme_author": "Akhil Patel",
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://support.shopify.com/"
+  },
+  {
+    "name": "Store settings",
+    "settings": [
+      {
+        "type": "image_picker",
+        "label": "Add your store logo",
+        "id": "store_logo"
+      },
+      {
+        "type": "image_picker",
+        "label": "Add Footer Logo",
+        "id": "store_footer_logo"
+      },
+      {
+        "type": "range",
+        "id": "page_width",
+        "default": 1200,
+        "max": 1300,
+        "unit": "px",
+        "label": "Set page max width",
+        "min": 1200
+      }
+    ]
+  }
+]

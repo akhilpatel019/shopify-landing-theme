@@ -1,0 +1,45 @@
+
+
+{% style  %} 
+
+  {{ block.settings.announcement_text | font_face }}
+
+    .announcement-bar{
+        background: {{ block.settings.announcement_bg_color }};
+        padding: {{ block.settings.bar_padding_top_bottom }}px {{ block.settings.bar_padding_left_right }}px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .announcement-bar p{
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 140%;
+        font-family: {{ block.settings.announcement_text.family }};
+        text-align: center;
+    }
+
+    @media screen and (max-width: 400px) {
+     .announcement-bar{
+        padding: {{ block.settings.bar_padding_top_bottom_mob}}px {{ block.settings.bar_padding_left_right_mob }}px;
+    }
+
+      .announcement-bar p{
+        font-size: 12px;
+    }
+}
+
+{% endstyle %}
+
+
+<div class="announcement-bar" {{ block.shopify_attributes }}>
+
+
+<div class="page_width">
+      <p>{{ block.settings.announcement_bar_text |  upcase }}</p>
+</div>
+
+
+</div>
