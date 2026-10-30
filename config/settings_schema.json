@@ -23,7 +23,13 @@
         "unit": "px",
         "label": "Set page max width",
         "min": 1200
-      }
+      },
+       {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body Font",
+      "default": "assistant_n4"
+    }
     ]
   }
 ]

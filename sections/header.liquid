@@ -1,169 +1,12 @@
-{% style  %}  
+{% render 'section-styles', section: section %}
 
-    {{section.settings.header_font |  font_face}}
+ {{ 'header.css' | asset_url | stylesheet_tag }}
 
-   .main-header{
-    background-color: {{section.settings.header_bg_color}};
-    font-family: {{section.settings.header_font.family}}
-   }
-
-
-    .page_header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding:{{section.settings.header_padding_top_bottom}}px {{section.settings.header_padding_left_right}}px;
-    width: 100%;
-    }
-
-      .page_header .header-left,
-      .page_header .header-right,
-      .page_header .header-logo-wrapper{
-        display: contents;
-    }
-
-    .page_header .header-left a,
-      .page_header .header-right a{
-        text-decoration: none;
-        color: #1D0930;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 140%;
-        cursor: pointer;
-        font-family: inherit;
-        text-transform: uppercase;
-      }
-
-      .page_header .header-logo a{
-            text-decoration: none;
-             cursor: pointer;
-      }
-
-         .page_header .header-logo-wrapper .header-logo{
-                width: 100%;
-                max-width: 120px;
-                object-fit: cover;
-                height: auto;
-         }
-
-
-
-    /* Mobile header */
-    .menu-toggle{
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-    }
-
-    .menu-toggle svg{
-      width: 24px;
-      height: 24px;
-    }
-
-    /* Offcanvas menu */
-    .menu-overlay{
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 998;
-    }
-
-    .menu-overlay.active{
-      display: block;
-    }
-
-    .offcanvas-menu{
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 300px;
-      height: 100%;
-      background: #fff;
-      z-index: 999;
-      transition: right 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .offcanvas-menu.active{
-      right: 0;
-    }
-
-    .offcanvas-header{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .offcanvas-logo{
-      max-width: 100px;
-      height: auto;
-    }
-
-    .close-menu{
-      background: none;
-      border: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: #1D0930;
-      line-height: 1;
-    }
-
-    .offcanvas-links{
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-    }
-
-    .offcanvas-links a{
-      text-decoration: none;
-      color: #1D0930;
-      font-weight: 500;
-      font-size: 16px;
-      text-transform: uppercase;
-      padding: 15px 0;
-      border-bottom: 1px solid #eee;
-      font-family: inherit;
-    }
-
-    @media (max-width: 768px){
-      .page_header .header-left,
-      .page_header .header-right{
-        display: none !important;
-      }
-
-      .page_header .header-logo-wrapper{
-        display: flex !important;
-      }
-
-      .page_header{
-        justify-content: space-between;
-          padding:{{section.settings.header_padding_top_bottom_mob}}px {{section.settings.header_padding_left_right_mob}}px;
-      }
-
-      .menu-toggle{
-        display: block;
-      }
-    }
-{% endstyle %}
 
 
 
 <header class="main-header">
   <div class="header_wrapper">
-
-    {% for block in section.blocks %}
-      {% case block.type %}
-        {% when 'announcement-bar' %}
-          {% render 'announcement-bar'
-            , block: block %}
-      {% endcase %}
-    {% endfor %}
 
     <nav class="page_header page_width">
 
@@ -264,12 +107,6 @@
         "type": "header",
         "content": "Header settings"
       },
-      {
-        "type": "color",
-        "label": "Set header bg color",
-        "id": "header_bg_color"
-      },
-
        {
       "type": "font_picker",
       "label": "Slect header font",
@@ -295,47 +132,66 @@
     },
       {
         "type": "header",
-        "content": "Header spacing for Desktop"
+        "content": "Spacing"
       },
       {
         "type": "range",
-        "id": "header_padding_top_bottom",
-        "label": "Set top and bottom spacing",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "default": 20,
-        "unit": "px"
-      }, {
+        "id": "padding_top",
+        "label": "Padding top (desktop)",
+        "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0
+      },
+      {
         "type": "range",
-        "id": "header_padding_left_right",
-        "label": "Set left and right spacing",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "default": 20,
-        "unit": "px"
-      }, {
+        "id": "padding_bottom",
+        "label": "Padding bottom (desktop)",
+        "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "label": "Padding top (mobile)",
+        "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "label": "Padding bottom (mobile)",
+        "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0
+      },
+      {
         "type": "header",
-        "content": "Header spacing for Mobile"
-      }, {
-        "type": "range",
-        "id": "header_padding_top_bottom_mob",
-        "label": "Set top and bottom spacing",
-        "min": 0,
-        "max": 50,
-        "step": 1,
-        "default": 15,
-        "unit": "px"
-      }, {
-        "type": "range",
-        "id": "header_padding_left_right_mob",
-        "label": "Set left and right spacing",
-        "min": 0,
-        "max": 50,
-        "step": 1,
-        "default": 15,
-        "unit": "px"
+        "content": "Background"
+      },
+      {
+        "type": "select",
+        "id": "bg_type",
+        "label": "Background type",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "color", "label": "Color" },
+          { "value": "gradient", "label": "Gradient" },
+          { "value": "image", "label": "Image" }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#FDF6F4",
+        "visible_if": "{{ section.settings.bg_type == 'color' }}"
+      },
+      {
+        "type": "color_background",
+        "id": "bg_gradient",
+        "label": "Background gradient",
+        "visible_if": "{{ section.settings.bg_type == 'gradient' }}"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background image",
+        "visible_if": "{{ section.settings.bg_type == 'image' }}"
       },
 
       {
@@ -353,81 +209,6 @@
       "id": "mobile_menu"
       }
 
-    ],
-    "blocks": [
-      {
-        "type": "announcement-bar",
-        "name": "Announcement Bar",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "header",
-            "content": "Announcement bar settings"
-          },
-          {
-            "type": "text",
-            "default": "Free shipping for first-time subscribers",
-            "label": "Add text for announcement bar",
-            "id": "announcement_bar_text",
-            "placeholder": "Add text here...."
-          },
-
-          {
-            "type": "font_picker",
-            "label": "Set text font",
-            "id": "announcement_text",
-            "default": "sans-serif"
-          },
-
-          {
-            "type": "color",
-            "label": "Set announcement bg color",
-            "id": "announcement_bg_color"
-          }, {
-            "type": "header",
-            "content": "Announcement bar spacing for desktop"
-          }, {
-            "type": "range",
-            "id": "bar_padding_top_bottom",
-            "label": "Set top and bottom spacing",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 10,
-            "unit": "px"
-          }, {
-            "type": "range",
-            "id": "bar_padding_left_right",
-            "label": "Set left and right spacing",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 10,
-            "unit": "px"
-          }, {
-            "type": "header",
-            "content": "Announcement bar spacing for Mobile"
-          }, {
-            "type": "range",
-            "id": "bar_padding_top_bottom_mob",
-            "label": "Set top and bottom spacing",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 10,
-            "unit": "px"
-          }, {
-            "type": "range",
-            "id": "bar_padding_left_right_mob",
-            "label": "Set left and right spacing",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 10,
-            "unit": "px"
-          }
-        ]
-      }
     ],
     "presets": [
       {

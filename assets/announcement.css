@@ -1,0 +1,27 @@
+ .announcement-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .announcement-bar p {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+    text-align: center;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 400px) {
+    .announcement-bar {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .announcement-bar p {
+      font-size: 12px;
+    }
+  }

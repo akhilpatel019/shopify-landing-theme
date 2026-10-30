@@ -1,0 +1,32 @@
+{%- liquid
+  assign s = section.settings
+  assign wrapper = '#shopify-section-' | append: section.id
+-%}
+<style>
+  {{ wrapper }} {
+    padding-top: {{ s.padding_top }}px;
+    padding-bottom: {{ s.padding_bottom }}px;
+    {%- case s.bg_type -%}
+      {%- when 'color' -%}
+        background: {{ s.bg_color }};
+      {%- when 'gradient' -%}
+        {%- if s.bg_gradient != blank -%}
+          background: {{ s.bg_gradient }};
+        {%- endif -%}
+      {%- when 'image' -%}
+        {%- if s.bg_image -%}
+          background-image: url('{{ s.bg_image | image_url: width: 2000 }}');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        {%- endif -%}
+    {%- endcase -%}
+  }
+  @media (max-width: 768px) {
+    {{ wrapper }} {
+      padding-top: {{ s.padding_top_mobile }}px;
+      padding-bottom: {{ s.padding_bottom_mobile }}px;
+    }
+  }
+</style>
+

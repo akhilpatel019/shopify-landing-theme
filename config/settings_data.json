@@ -9,38 +9,39 @@
  */
 {
   "current": {
+    "body_font": "radio_canada_big_n4",
     "sections": {
       "header": {
         "type": "header",
-        "blocks": {
-          "announcement_bar_hhWU9M": {
-            "type": "announcement-bar",
-            "settings": {
-              "announcement_bar_text": "Free shipping for first-time subscribers",
-              "announcement_text": "radio_canada_big_n4",
-              "announcement_bg_color": "#4e2870",
-              "bar_padding_top_bottom": 10,
-              "bar_padding_left_right": 10,
-              "bar_padding_top_bottom_mob": 10,
-              "bar_padding_left_right_mob": 10
-            }
-          }
-        },
-        "block_order": [
-          "announcement_bar_hhWU9M"
-        ],
         "settings": {
-          "header_bg_color": "#e7e3f1",
           "header_font": "radio_canada_big_n4",
           "header_left_side_menu": "header_menu_left",
           "header_logo": "shopify://shop_images/Frame_104_1.png",
           "header_right_side_menu": "header_menu_right",
-          "header_padding_top_bottom": 16,
-          "header_padding_left_right": 32,
-          "header_padding_top_bottom_mob": 16,
-          "header_padding_left_right_mob": 32,
+          "padding_top": 16,
+          "padding_bottom": 16,
+          "padding_top_mobile": 16,
+          "padding_bottom_mobile": 16,
+          "bg_type": "color",
+          "bg_color": "#e7e3f1",
+          "bg_gradient": "",
           "mobile_menu_logo": "shopify://shop_images/Frame_104_1.png",
           "mobile_menu": "mobile_menu"
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "announcement_bar_text": "Free shipping for first-time subscribers",
+          "announcement_text": "radio_canada_big_n4",
+          "announcement_text_color": "#ffffff",
+          "padding_top": 12,
+          "padding_bottom": 12,
+          "padding_top_mobile": 8,
+          "padding_bottom_mobile": 8,
+          "bg_type": "color",
+          "bg_color": "#4e2870",
+          "bg_gradient": ""
         }
       }
     },
