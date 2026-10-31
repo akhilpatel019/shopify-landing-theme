@@ -1,0 +1,96 @@
+.featured-products{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0 24px;
+}
+
+.featured-products .product-card{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 32px 24px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.featured-products .product-card img{
+    width: 100%;
+    filter: drop-shadow(6px 5px 18px rgba(199, 171, 169, 0.98))
+    drop-shadow(26px 20px 33px rgba(199, 171, 169, 0.85))
+    drop-shadow(58px 45px 44px rgba(199, 171, 169, 0.50))
+    drop-shadow(104px 79px 52px rgba(199, 171, 169, 0.15))
+    drop-shadow(162px 124px 57px rgba(199, 171, 169, 0.02));
+    height: auto;
+    object-fit: cover;
+}
+
+
+.featured-products .product-card  .product-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+     position: relative;
+  z-index: 5;
+}
+
+
+.featured-products .product-card  .product-info h3{
+    font-family: 'Roboto Serif', serif;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: -4%;
+    font-weight: 400;
+    color: #1C2330;
+}
+
+.featured-products .product-card  .product-info p{
+    font-family: 'Roboto Serif', serif;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: -4%;
+    font-weight: 400;
+    color: #1C2330;
+}
+
+.product-info.price-hidden h3 {
+  text-align: center;
+  width: 100%;
+  font-size: 32px !important;
+ 
+}
+
+
+
+@media (max-width: 767px) {
+    .featured-products{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .featured-products .product-card  .product-info p{
+    font-size: 18px;
+}
+
+
+}
+
+@media (max-width: 480px) {
+    .featured-products{
+        grid-template-columns: 1fr;
+    }
+
+
+
+    .featured-products .product-card  .product-info h3{
+    font-size: 24px;
+    text-align: center;
+}
+
+
+.featured-products .product-card  .product-info p{
+    display: none;
+}
+
+}
