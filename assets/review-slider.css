@@ -1,0 +1,55 @@
+.review-slide-heading{
+    width: 100%;
+    padding: 0 20px;
+}
+
+
+.review-swiper {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.review-swiper .swiper-slide {
+  background-color: #ffffff7e;
+  border-radius: 20px;
+  padding: 24px;
+  min-height: 230px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-slide-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  flex: 1;
+}
+
+.r-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.r-text p {
+  font-size: 18px;
+  color: #6D727B;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.review-user-name p {
+  font-size: 16px;
+  color: #6D727B;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+@media (max-width: 480px) {
+  .review-swiper {
+    margin-top: 32px;
+  }
+}

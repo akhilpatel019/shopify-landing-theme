@@ -253,6 +253,70 @@
         "bg_image": "shopify://shop_images/Hero.webp",
         "bg_image_mob": "shopify://shop_images/Hero_1.webp"
       }
+    },
+    "review_slider_NrAehP": {
+      "type": "review-slider",
+      "blocks": {
+        "review_slide_JDhcNX": {
+          "type": "review-slide",
+          "settings": {
+            "rating_count": 5,
+            "rating_msg": "“No sugar and no weird aftertaste. It feels clean and simple.”",
+            "username": "Sarah L."
+          }
+        },
+        "review_slide_iwyDWh": {
+          "type": "review-slide",
+          "settings": {
+            "rating_count": 5,
+            "rating_msg": "“Mixes fast, no grit. That alone made me reorder.”",
+            "username": "Jessica M."
+          }
+        },
+        "review_slide_XwYR4n": {
+          "type": "review-slide",
+          "settings": {
+            "rating_count": 5,
+            "rating_msg": "“I notice the difference on days I skip it.”",
+            "username": "Megan R."
+          }
+        },
+        "review_slide_7r7AN8": {
+          "type": "review-slide",
+          "settings": {
+            "rating_count": 5,
+            "rating_msg": "“I wanted something simple for everyday hydration and this fits perfectly.”",
+            "username": "Kayla W."
+          }
+        },
+        "review_slide_gVLpGf": {
+          "type": "review-slide",
+          "settings": {
+            "rating_count": 5,
+            "rating_msg": "I keep it on my desk and in my gym bag. It makes staying consistent way easier.”",
+            "username": "Hannah S."
+          }
+        }
+      },
+      "block_order": [
+        "review_slide_JDhcNX",
+        "review_slide_iwyDWh",
+        "review_slide_XwYR4n",
+        "review_slide_7r7AN8",
+        "review_slide_gVLpGf"
+      ],
+      "name": "Review card's slider",
+      "settings": {
+        "section_title": "Why they keep reordering",
+        "italic_word": "reordering",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "bg_type": "gradient",
+        "bg_color": "#1d0930",
+        "bg_gradient": "linear-gradient(180deg, rgba(247, 245, 252, 1), rgba(205, 195, 229, 1) 100%)"
+      }
     }
   },
   "order": [
@@ -262,6 +326,7 @@
     "collection_list_fwTANc",
     "features_card_GmjhRy",
     "why_choose_section_HxJF6X",
-    "img_poster_section_yFCB9p"
+    "img_poster_section_yFCB9p",
+    "review_slider_NrAehP"
   ]
 }

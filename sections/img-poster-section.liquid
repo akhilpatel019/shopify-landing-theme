@@ -22,7 +22,7 @@
 <div class="page_width">
   
 <div class="poster_inner">
-    {% assign title = section.settings.section_title %}
+{% assign title = section.settings.section_title %}
 {% assign italic_word = section.settings.italic_word %}
 
 {% if italic_word != blank %}
@@ -56,6 +56,7 @@
 {%  schema  %} 
 {
     "name":"Poster Section",
+    "tag": "section",
     "settings": [
         {
             "type": "header",
