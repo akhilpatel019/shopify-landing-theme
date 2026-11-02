@@ -233,6 +233,26 @@
         "bg_color": "#1d0930",
         "bg_gradient": ""
       }
+    },
+    "img_poster_section_yFCB9p": {
+      "type": "img-poster-section",
+      "name": "Poster Section",
+      "settings": {
+        "section_title": "More than electrolytes.",
+        "italic_word": "electrolytes.",
+        "poster_desc": "Most mixes stop at hydration. Cellyte adds NAD support (NR), creatine, magnesium, and vitamins for more daily support.",
+        "btn_url": "shopify://collections/test-collection",
+        "btn_text": "See What’s Inside",
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "bg_type": "image",
+        "bg_color": "#1d0930",
+        "bg_gradient": "",
+        "bg_image": "shopify://shop_images/Hero.webp",
+        "bg_image_mob": "shopify://shop_images/Hero_1.webp"
+      }
     }
   },
   "order": [
@@ -241,6 +261,7 @@
     "heading_block_qiaVBW",
     "collection_list_fwTANc",
     "features_card_GmjhRy",
-    "why_choose_section_HxJF6X"
+    "why_choose_section_HxJF6X",
+    "img_poster_section_yFCB9p"
   ]
 }
