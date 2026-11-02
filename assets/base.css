@@ -83,10 +83,9 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     font-size: 64px;
     font-weight: 400;
     line-height: 120%;
-    max-width: 926px;
     font-stretch: 60%;
     font-variation-settings: "wdth" 60;
-    margin: 0px auto;
+    
 }
 
 

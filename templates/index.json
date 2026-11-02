@@ -172,6 +172,67 @@
         "bg_color": "#1d0930",
         "bg_gradient": "linear-gradient(180deg, rgba(233, 205, 202, 1), rgba(247, 245, 252, 1) 100%, rgba(247, 245, 252, 1) 100%)"
       }
+    },
+    "why_choose_section_HxJF6X": {
+      "type": "why-choose-section",
+      "blocks": {
+        "why_point_mPqXzP": {
+          "type": "why_point",
+          "settings": {
+            "point_title": "Multi-vitamins",
+            "point_desc": "Daily foundational support to round out your scoop."
+          }
+        },
+        "why_point_tqWkYQ": {
+          "type": "why_point",
+          "settings": {
+            "point_title": "NAD",
+            "point_desc": "Supports cellular energy and day-to-day vitality."
+          }
+        },
+        "why_point_wUWUJf": {
+          "type": "why_point",
+          "settings": {
+            "point_title": "Biotin",
+            "point_desc": "Beauty from within support for hair, skin, and nails."
+          }
+        },
+        "why_point_zrJKHH": {
+          "type": "why_point",
+          "settings": {
+            "point_title": "Creatine",
+            "point_desc": "Supports strength, performance, and even recovery support."
+          }
+        },
+        "why_point_DhLEBH": {
+          "type": "why_point",
+          "settings": {
+            "point_title": "Magnesium",
+            "point_desc": "Supports muscle and nerve function, plus daily balance."
+          }
+        }
+      },
+      "block_order": [
+        "why_point_mPqXzP",
+        "why_point_tqWkYQ",
+        "why_point_wUWUJf",
+        "why_point_zrJKHH",
+        "why_point_DhLEBH"
+      ],
+      "name": "Why Choose Section",
+      "settings": {
+        "section_image": "shopify://shop_images/why-choose-us.webp",
+        "section_title": "Why choose us",
+        "italic_word": "Why",
+        "section_desc": "One scoop supports hydration, energy, and perfohrmance support, with a formula you can actually drink every day.",
+        "padding_top": 60,
+        "padding_bottom": 120,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "bg_type": "none",
+        "bg_color": "#1d0930",
+        "bg_gradient": ""
+      }
     }
   },
   "order": [
@@ -179,6 +240,7 @@
     "marquee_slider_DRH94h",
     "heading_block_qiaVBW",
     "collection_list_fwTANc",
-    "features_card_GmjhRy"
+    "features_card_GmjhRy",
+    "why_choose_section_HxJF6X"
   ]
 }
