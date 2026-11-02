@@ -1,0 +1,15 @@
+<div class="f_card_wrapper" {{block.shopify_attributes}}>
+
+ {% if block.settings.card_img != blank %}
+    {{
+      block.settings.card_img
+      | image_url: width: 200
+      | image_tag: alt: block.settings.card_title
+    }}
+  {% endif %}
+
+  <h3>{{ block.settings.card_title }}</h3>
+
+  <p>{{ block.settings.card_description }}</p>
+
+</div>

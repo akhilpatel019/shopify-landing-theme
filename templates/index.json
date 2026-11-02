@@ -117,12 +117,68 @@
         "bg_color": "#e9cdca",
         "bg_gradient": ""
       }
+    },
+    "features_card_GmjhRy": {
+      "type": "features-card",
+      "blocks": {
+        "f_card_hNYQyr": {
+          "type": "f_card",
+          "settings": {
+            "card_img": "shopify://shop_images/Frame_152.svg",
+            "card_title": "Energy support",
+            "card_description": "Supports steady energy and focus throughout the day."
+          }
+        },
+        "f_card_pDtgYC": {
+          "type": "f_card",
+          "settings": {
+            "card_img": "shopify://shop_images/Frame_95113.svg",
+            "card_title": "Hydration that lasts",
+            "card_description": "Helps with what you lose from sweat and daily life."
+          }
+        },
+        "f_card_TrxY7w": {
+          "type": "f_card",
+          "settings": {
+            "card_img": "shopify://shop_images/Frame_95113_1.svg",
+            "card_title": "Daily balance",
+            "card_description": "Supports muscle and nerve function with key minerals."
+          }
+        },
+        "f_card_gr97fE": {
+          "type": "f_card",
+          "settings": {
+            "card_img": "shopify://shop_images/Frame_153.svg",
+            "card_title": "Simple refill",
+            "card_description": "A clean daily scoop to help cover hydration gaps."
+          }
+        }
+      },
+      "block_order": [
+        "f_card_hNYQyr",
+        "f_card_pDtgYC",
+        "f_card_TrxY7w",
+        "f_card_gr97fE"
+      ],
+      "name": "Features Card",
+      "settings": {
+        "section_title": "The essentials in one scoop",
+        "italic_word": "essentials",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "bg_type": "gradient",
+        "bg_color": "#1d0930",
+        "bg_gradient": "linear-gradient(180deg, rgba(233, 205, 202, 1), rgba(247, 245, 252, 1) 100%, rgba(247, 245, 252, 1) 100%)"
+      }
     }
   },
   "order": [
     "main_hero_section_HJemKV",
     "marquee_slider_DRH94h",
     "heading_block_qiaVBW",
-    "collection_list_fwTANc"
+    "collection_list_fwTANc",
+    "features_card_GmjhRy"
   ]
 }
