@@ -317,6 +317,54 @@
         "bg_color": "#1d0930",
         "bg_gradient": "linear-gradient(180deg, rgba(247, 245, 252, 1), rgba(205, 195, 229, 1) 100%)"
       }
+    },
+    "use_steps_slider_6QHQTW": {
+      "type": "use-steps-slider",
+      "blocks": {
+        "use_steps_slide_NFJbJB": {
+          "type": "use_steps_slide",
+          "settings": {
+            "slider_tracking": "1/1",
+            "slid_title": "Pour and scoop",
+            "slide_description": "<p>Add 1 scoop to 12 to 20 fl oz of cold water,<br/>depending on how strong you like it.&nbsp;</p>",
+            "slider_img": "shopify://shop_images/use-slide-1.webp"
+          }
+        },
+        "use_steps_slide_gmdi6K": {
+          "type": "use_steps_slide",
+          "settings": {
+            "slider_tracking": "1/2",
+            "slid_title": "Shake it up",
+            "slide_description": "<p>Shake or stir until fully dissolved.&nbsp;<br/>Ice makes it even better.</p>",
+            "slider_img": "shopify://shop_images/use-slide-2.webp"
+          }
+        },
+        "use_steps_slide_aAJkWA": {
+          "type": "use_steps_slide",
+          "settings": {
+            "slider_tracking": "3/3",
+            "slid_title": "Repeat daily",
+            "slide_description": "<p>Make it your easiest habit.</p><p>h</p>",
+            "slider_img": "shopify://shop_images/use-slide-3.webp"
+          }
+        }
+      },
+      "block_order": [
+        "use_steps_slide_NFJbJB",
+        "use_steps_slide_gmdi6K",
+        "use_steps_slide_aAJkWA"
+      ],
+      "name": "Use step's slider",
+      "settings": {
+        "slider_common_title": "Suggested use",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "bg_type": "gradient",
+        "bg_color": "#1d0930",
+        "bg_gradient": "linear-gradient(180deg, rgba(205, 195, 229, 1), rgba(247, 245, 252, 1) 100%)"
+      }
     }
   },
   "order": [
@@ -327,6 +375,7 @@
     "features_card_GmjhRy",
     "why_choose_section_HxJF6X",
     "img_poster_section_yFCB9p",
-    "review_slider_NrAehP"
+    "review_slider_NrAehP",
+    "use_steps_slider_6QHQTW"
   ]
 }

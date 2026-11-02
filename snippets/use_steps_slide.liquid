@@ -1,0 +1,22 @@
+<div class="swiper-slide use-slide {{block.shopify_attributes}}">
+  <div class="use-slide-content">
+    <div class="use-slide-body">
+      <span class="use-slide-badge">{{block.settings.slider_tracking}}</span>
+      <div class="use-slide-info">
+        <h3>{{block.settings.slid_title}}</h3>
+        <div class="rte">
+          <p>{{block.settings.slide_description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="use-slide-media">
+ {% if block.settings.slider_img != blank %}
+  {{
+    block.settings.slider_img
+    | image_url: width: 1200
+    | image_tag: alt: block.settings.slid_title
+  }}
+{% endif %}
+  </div>
+</div>
