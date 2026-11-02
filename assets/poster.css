@@ -1,0 +1,38 @@
+.poster-section{
+    width: 100%;
+    padding: 0 20px;
+    min-height: 703px;
+    display: flex;
+    align-items: center;
+}
+
+.poster_inner{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 568px;
+    width: 100%;
+}
+
+.poster_inner p{
+    font-size: 24px;
+    color: #414347;
+    line-height: 140%;
+    font-weight: 400;
+}
+
+
+@media (max-width: 480px) {
+    .poster_inner p{
+    font-size: 18px;
+    }
+
+    .btn-fill{
+        width: 100%;
+    }
+
+.poster-section {
+    align-items: baseline;
+}
+
+}

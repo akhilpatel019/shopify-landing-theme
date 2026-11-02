@@ -2,77 +2,55 @@
 
 {{ 'why.css' | asset_url | stylesheet_tag }}
 
-
-
 <section class="why-c-section">
-    <div class="page_width why-c-wrapper">
-        
-<div class="why-left">
-
-{% if section.settings.section_image != blank %}
-   {{
-  section.settings.section_image
-  | image_url: width: 600
-  | image_tag: alt: section.settings.section_title 
-}}
-{% endif %}
-
-</div>
-
-<div class="why-right">
-
-<div class="why-header">
-     {% assign title = section.settings.section_title %}
-{% assign italic_word = section.settings.italic_word %}
-
-{% if italic_word != blank %}
-  {% capture italic_tag %}<em>{{ italic_word }}</em>{% endcapture %}
-  {% assign italic_title = title | replace: italic_word, italic_tag %}
-{% else %}
-  {% assign italic_title = title %}
-{% endif %}
-
-<h2 class="section_header_title">
-  {{ italic_title }}
-</h2>
-
-<p>{{section.settings.section_desc}}</p>
-</div>
-
-<div class="why-points-wrapper">
-    {% for block in section.blocks %}
-        
-
-    {% if block.type == 'why_point' %}
-
-        <div class="why-point" {{block.shopify_attributes}}>
-              <h3>{{ block.settings.point_title }}</h3>
-        <p>{{ block.settings.point_desc }}</p>
-        </div>
-
-    {%endif%}
-
-    {% endfor %}
-</div>
-
-</div>
-
+  <div class="page_width why-c-wrapper">
+    <div class="why-left">
+      {% if section.settings.section_image != blank %}
+        {{ section.settings.section_image | image_url: width: 600 | image_tag: alt: section.settings.section_title }}
+      {% endif %}
     </div>
+
+    <div class="why-right">
+      <div class="why-header">
+        {% assign title = section.settings.section_title %}
+        {% assign italic_word = section.settings.italic_word %}
+
+        {% if italic_word != blank %}
+          {% capture italic_tag %}<em>{{ italic_word }}</em>{% endcapture %}
+          {% assign italic_title = title | replace: italic_word, italic_tag %}
+        {% else %}
+          {% assign italic_title = title %}
+        {% endif %}
+
+        <h2 class="section_header_title">
+          {{ italic_title }}
+        </h2>
+
+        <p>{{ section.settings.section_desc }}</p>
+      </div>
+
+      <div class="why-points-wrapper">
+        {% for block in section.blocks %}
+          {% if block.type == 'why_point' %}
+            <div class="why-point" {{ block.shopify_attributes }}>
+              <h3>{{ block.settings.point_title }}</h3>
+              <p>{{ block.settings.point_desc }}</p>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </section>
-
-
-
-
 
 {% schema %}
 {
   "name": "Why Choose Section",
   "settings": [
-
     {
-        "type": "image_picker",
-        "id": "section_image",
-        "label": "Add images"
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Add images"
     },
 
     {
@@ -177,26 +155,26 @@
   ],
   "blocks": [
     {
-        "type": "why_point",
-        "name" : "Section Points",
-        "settings": [
-            {
-                "type": "header",
-                "content": "Add point detail's"
-            },
-            {
-                "type": "text",
-                "id": "point_title",
-                "default": "Point Title",
-                "label": "Add point title"
-            },
-            {
-                "type": "text",
-                "id": "point_desc",
-                "default": "Point Description....",
-                "label": "Add point description"
-            }
-        ]
+      "type": "why_point",
+      "name": "Section Points",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Add point detail's"
+        },
+        {
+          "type": "text",
+          "id": "point_title",
+          "default": "Point Title",
+          "label": "Add point title"
+        },
+        {
+          "type": "text",
+          "id": "point_desc",
+          "default": "Point Description....",
+          "label": "Add point description"
+        }
+      ]
     }
   ],
   "presets": [
