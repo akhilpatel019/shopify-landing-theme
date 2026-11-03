@@ -43,6 +43,26 @@
           "bg_color": "#4e2870",
           "bg_gradient": ""
         }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_logo": "shopify://shop_images/footer-logo.png",
+          "first_menu": "footer_menu_first",
+          "subscribe_form_title": "Get subscriber-only perks",
+          "add_facebook_link": "https://facebook.com",
+          "add_instagram_link": "https://instagram.com",
+          "add_tiktok_link": "https://tiktok.com",
+          "select_second_menu": "footer_menu_last",
+          "add_copyright_text": "<p>©2026 Cellyte Minerals</p>",
+          "padding_top": 48,
+          "padding_bottom": 48,
+          "padding_top_mobile": 32,
+          "padding_bottom_mobile": 24,
+          "bg_type": "gradient",
+          "bg_color": "#1d0930",
+          "bg_gradient": "linear-gradient(135deg, rgba(205, 195, 229, 1), rgba(247, 245, 252, 1) 50%, rgba(233, 205, 202, 1) 100%)"
+        }
       }
     },
     "content_for_index": []
