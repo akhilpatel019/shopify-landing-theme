@@ -27,7 +27,7 @@
         "padding_bottom_mobile": 0,
         "bg_type": "gradient",
         "bg_color": "#fdf6f4",
-        "bg_gradient": "linear-gradient(90deg, rgba(233, 229, 243, NaN), rgba(205, 195, 229, NaN) 100%)"
+        "bg_gradient": "linear-gradient(90deg, rgb(233, 229, 243) 0%, rgb(205, 195, 229) 100%)"
       }
     },
     "marquee_slider_DRH94h": {
