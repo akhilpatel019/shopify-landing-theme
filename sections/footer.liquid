@@ -3,7 +3,7 @@
 {{ 'footer.css' | asset_url | stylesheet_tag }}
 
 <div class="main-footer">
-  <div class="footer-inner">
+  <div class="footer-inner page_width">
    <div class="footer-logo">
   {% if section.settings.footer_logo != blank %}
     {{ section.settings.footer_logo | image_url: width: 300 | image_tag: alt: shop.name }}
