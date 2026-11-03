@@ -2,7 +2,7 @@
 
 {{ 'why.css' | asset_url | stylesheet_tag }}
 
-<section class="why-c-section">
+<div class="why-c-section">
   <div class="page_width why-c-wrapper">
     <div class="why-left">
       {% if section.settings.section_image != blank %}
@@ -41,7 +41,7 @@
       </div>
     </div>
   </div>
-</section>
+</div>
 
 {% schema %}
 {

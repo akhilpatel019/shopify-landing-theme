@@ -1,0 +1,237 @@
+.main-footer{
+    padding: 0 20px;
+    width: 100%;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 240px;
+    margin: 0 auto;
+    display: block;
+}
+
+.footer-content {
+    padding: 70px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #6D727B;
+    line-height: 140%;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.links-right a {
+    text-align: right;
+}
+
+.footer-center-title {
+    font-size: 48px;
+    color: #1D0930;
+    font-weight: 400;
+    line-height: 100%;
+    font-family: 'Roboto Serif', serif;
+    font-stretch: 60%;
+    font-variation-settings: 'wdth' 60;
+}
+
+.footer-content-center {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footer-newsletter-form {
+    width: 100%;
+    margin-top: 32px;
+}
+
+.footer-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #6D727B;
+    padding-bottom: 12px;
+    transition: border-color 0.25s ease;
+}
+
+.footer-input-group:focus-within {
+    border-bottom-color: #1D0930;
+}
+
+.footer-input-group input {
+    flex: 1;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Radio Canada Big', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #1D0930;
+    padding: 0;
+    line-height: 140%;
+}
+
+.footer-input-group input::placeholder {
+    color: #6D727B;
+    opacity: 1;
+    font-family: 'Radio Canada Big', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.footer-input-group button {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 0 0 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.footer-input-group button:hover {
+    transform: translateX(4px);
+}
+
+.footer-input-group button svg path {
+    transition: fill 0.2s ease;
+}
+
+.footer-input-group button:hover svg path {
+    fill: #1D0930;
+}
+
+.footer-social-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+}
+
+.footer-social-wrapper a {
+    text-decoration: none;
+}
+
+.footer-copywrite {
+    margin-top: 70px;
+    padding-top: 15px;
+    border-top: 1px solid #868D98;
+}
+
+.footer-copywrite p {
+    text-align: center;
+    color: #6D727B;
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 400;
+}
+
+/* 
+============================================
+footer responsive css
+============================================
+*/
+
+@media (max-width: 768px) {
+    .footer-logo img {
+        margin: 0;
+        max-width: 170px;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 48px 0 0 0;
+        gap: 0;
+    }
+
+    .footer-content-center {
+        order: 1;
+        width: 100%;
+        gap: 28px;
+        margin-bottom: 48px;
+    }
+
+    .footer-center-title {
+        text-align: left !important;
+        font-size: 56px;
+        line-height: 110%;
+        max-width: 300px;
+    }
+
+    .footer-newsletter-form {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .footer-social-wrapper {
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .footer-content-left {
+        order: 2;
+        width: 50%;
+        flex: 0 0 50%;
+    }
+
+    .footer-content-right {
+        order: 3;
+        width: 50%;
+        flex: 0 0 50%;
+    }
+
+    .footer-links {
+        gap: 20px;
+    }
+
+    .links-right a {
+        text-align: left;
+    }
+
+    .footer-copywrite {
+        margin-top: 48px;
+        padding-top: 20px;
+        border-top: 1px solid #868D98;
+    }
+
+    .footer-copywrite p {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo img {
+        max-width: 132px;
+    }
+
+    .footer-center-title {
+        font-size: 32px;
+    }
+
+    .footer-links {
+        gap: 18px;
+    }
+
+    .footer-links a {
+        font-size: 14px;
+    }
+}

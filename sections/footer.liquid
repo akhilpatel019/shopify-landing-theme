@@ -1,0 +1,262 @@
+{% render 'section-styles', section: section %}
+
+{{ 'footer.css' | asset_url | stylesheet_tag }}
+
+<div class="main-footer">
+  <div class="footer-inner">
+   <div class="footer-logo">
+  {% if section.settings.footer_logo != blank %}
+    {{ section.settings.footer_logo | image_url: width: 300 | image_tag: alt: shop.name }}
+  {% endif %}
+</div>
+
+    <div class="footer-content">
+      <div class="footer-content-left">
+        {% assign footer_menu_first = section.settings.first_menu.links %}
+        <div class="footer-links">
+          {% for link in footer_menu_first %}
+            <a href="{{link.url}}">{{ link.title }}</a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="footer-content-center">
+        <h2 class="footer-center-title text-center">{{ section.settings.subscribe_form_title }}</h2>
+
+        <form action="" class="footer-newsletter-form">
+          <div class="footer-input-group">
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              aria-label="Email address"
+            >
+            <button type="submit" aria-label="Submit email">
+              <svg
+                width="14"
+                height="10"
+                viewBox="0 0 14 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8.61107 0.33169C8.64471 0.250013 8.69803 0.177923 8.76627 0.121837C8.83452 0.0657517 8.91557 0.0274116 9.00222 0.0102308C9.08886 -0.00695007 9.17841 -0.00243849 9.2629 0.0233638C9.34738 0.049166 9.42417 0.0954583 9.48643 0.158119L13.7721 4.44383C13.822 4.4936 13.8616 4.55271 13.8886 4.6178C13.9156 4.68288 13.9295 4.75265 13.9295 4.82312C13.9295 4.89358 13.9156 4.96336 13.8886 5.02844C13.8616 5.09352 13.822 5.15264 13.7721 5.2024L9.48643 9.48812C9.38584 9.58871 9.2494 9.64522 9.10714 9.64522C8.96488 9.64522 8.82845 9.58871 8.72786 9.48812C8.62726 9.38753 8.57075 9.25109 8.57075 9.10883C8.57075 8.96657 8.62726 8.83014 8.72786 8.72955L12.0996 5.35883H0.535714C0.393634 5.35883 0.257373 5.30239 0.156907 5.20193C0.0564411 5.10146 0 4.9652 0 4.82312C0 4.68104 0.0564411 4.54478 0.156907 4.44431C0.257373 4.34385 0.393634 4.2874 0.535714 4.2874H12.0996L8.72786 0.91669C8.65259 0.841743 8.6013 0.746113 8.5805 0.64195C8.55971 0.537786 8.57035 0.429793 8.61107 0.33169Z"
+                  fill="#6D727B" />
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <div class="footer-social-wrapper">
+          <a href="{{section.settings.add_instagram_link}}">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5 0C2.23857 0 0 2.23857 0 5V15C0 17.7615 2.23857 20 5 20H15C17.7615 20 20 17.7615 20 15V5C20 2.23857 17.7615 0 15 0H5ZM10 6.36364C7.99169 6.36364 6.36364 7.99169 6.36364 10C6.36364 12.0083 7.99169 13.6364 10 13.6364C12.0083 13.6364 13.6364 12.0083 13.6364 10C13.6364 7.99169 12.0083 6.36364 10 6.36364ZM4.54545 10C4.54545 6.98754 6.98754 4.54545 10 4.54545C13.0125 4.54545 15.4545 6.98754 15.4545 10C15.4545 13.0125 13.0125 15.4545 10 15.4545C6.98754 15.4545 4.54545 13.0125 4.54545 10ZM15.4545 2.72727C14.4504 2.72727 13.6364 3.5413 13.6364 4.54545C13.6364 5.54961 14.4504 6.36364 15.4545 6.36364C16.4587 6.36364 17.2727 5.54961 17.2727 4.54545C17.2727 3.5413 16.4587 2.72727 15.4545 2.72727Z"
+                fill="#6D727B" />
+            </svg>
+          </a>
+          <a href="{{section.settings.add_facebook_link}}">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M10.0001 0C4.47724 0 0 4.47724 0 10.0001C0 14.9534 3.60522 19.0556 8.33225 19.8499V12.0863H5.91994V9.29254H8.33225V7.2325C8.33225 4.84227 9.79213 3.53973 11.9247 3.53973C12.9461 3.53973 13.8238 3.61583 14.0786 3.64936V6.14779L12.5995 6.14851C11.44 6.14851 11.2165 6.69939 11.2165 7.50807V9.29111H13.9832L13.6223 12.0849H11.2165V19.9167C16.1642 19.3146 20 15.1079 20 9.9972C20 4.47724 15.5228 0 10.0001 0Z" fill="#6D727B" />
+            </svg>
+          </a>
+          <a href="{{section.settings.add_tiktok_link}}">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0ZM10.2441 12.1064C10.2441 13.0264 9.49324 13.7773 8.57324 13.7773C7.65324 13.7773 6.90234 13.0264 6.90234 12.1064C6.9024 11.1865 7.65328 10.4355 8.57324 10.4355H9.13281V8.65723H8.57324C6.67106 8.65723 5.12408 10.2043 5.12402 12.1064C5.12402 14.0087 6.67102 15.5557 8.57324 15.5557C10.4755 15.5557 12.0225 14.0087 12.0225 12.1064V8.0752C13.3104 9.00332 14.7045 9.03121 14.8662 9.03125V7.25684C14.8691 7.25691 14.8708 7.25781 14.8711 7.25781V7.25293H14.8662V7.25684C14.7905 7.25484 13.8489 7.21786 13.0439 6.62695C12.3151 6.0936 12.0625 4.93305 12.0225 4.50195V4.44434H10.2441V12.1064Z" fill="#6D727B" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-content-right">
+        {% assign footer_menu_last = section.settings.select_second_menu.links %}
+        <div class="footer-links links-right">
+          {% for link in footer_menu_last %}
+            <a href="{{link.url}}">{{ link.title }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="footer-copywrite">
+        <div class="rte">
+            <p>{{section.settings.add_copyright_text}}</p>
+        </div>
+    </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Footer settings "
+    },
+    {
+      "type": "image_picker",
+      "label": "Add footer logo",
+      "id": "footer_logo"
+    },
+    {
+      "type": "link_list",
+      "label": "Select first menu",
+      "id": "first_menu"
+    },
+    {
+      "type": "text",
+      "label": "Add subscribe form title",
+      "id": "subscribe_form_title",
+      "default": "Get subscriber-only perks"
+    },
+    {
+      "type": "url",
+      "label": "Add facebook link",
+      "id": "add_facebook_link"
+    },
+    {
+      "type": "url",
+      "label": "Add instagram link",
+      "id": "add_instagram_link"
+    },
+    {
+      "type": "url",
+      "label": "Add tiktok link",
+      "id": "add_tiktok_link"
+    },
+    {
+      "type": "link_list",
+      "label": "Select second menu",
+      "id": "select_second_menu"
+    },
+     {
+      "type": "richtext",
+      "label": "Add copyright text",
+      "id": "add_copyright_text",
+      "default": "<p>©2026 Cellyte Minerals</p>"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top (desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom (desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "select",
+      "id": "bg_type",
+      "label": "Background type",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#1D0930",
+      "visible_if": "{{ section.settings.bg_type == 'color' }}"
+    },
+    {
+      "type": "color_background",
+      "id": "bg_gradient",
+      "label": "Background gradient",
+      "visible_if": "{{ section.settings.bg_type == 'gradient' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image",
+      "visible_if": "{{ section.settings.bg_type == 'image' }}"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}
+{% endschema %}

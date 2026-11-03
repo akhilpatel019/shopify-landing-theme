@@ -1,7 +1,7 @@
 {% render 'section-styles', section: section %}
 {{ 'use-slider.css' | asset_url | stylesheet_tag }}
 
-<section class="use-step-slider">
+<div class="use-step-slider">
   <div class="page_width">
     <div class="use-slider-card">
       <!-- Fixed Header Title (does not fade) -->
@@ -52,7 +52,7 @@
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <script src="{{ 'use-steps-slider.js' | asset_url }}" defer></script>
 
