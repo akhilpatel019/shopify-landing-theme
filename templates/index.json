@@ -27,7 +27,7 @@
         "padding_bottom_mobile": 0,
         "bg_type": "gradient",
         "bg_color": "#fdf6f4",
-        "bg_gradient": "linear-gradient(90deg, rgb(233, 229, 243) 0%, rgb(205, 195, 229) 100%)"
+        "bg_gradient": "linear-gradient(90deg, rgba(233, 229, 243, NaN), rgba(205, 195, 229, NaN) 100%)"
       }
     },
     "marquee_slider_DRH94h": {
@@ -365,6 +365,67 @@
         "bg_color": "#1d0930",
         "bg_gradient": "linear-gradient(180deg, rgba(205, 195, 229, 1), rgba(247, 245, 252, 1) 100%)"
       }
+    },
+    "faq_8wzz4U": {
+      "type": "faq",
+      "blocks": {
+        "faq_list_Ake7ae": {
+          "type": "faq_list",
+          "settings": {
+            "faq_question": "What makes Cellyte Minerals “female optimized”?",
+            "faq_answers": "<p>Cellyte combines a full-spectrum electrolyte blend with targeted support like NAD support (NR), biotin, magnesium, and vitamins to fit women's daily routines, without added sugar.</p>"
+          }
+        },
+        "faq_list_H7MxHB": {
+          "type": "faq_list",
+          "settings": {
+            "faq_question": "How do I mix it, and how much water should I use?",
+            "faq_answers": "<p>Cellyte combines a full-spectrum electrolyte blend with targeted support like NAD support (NR), biotin, magnesium, and vitamins to fit women's daily routines, without added sugar.</p>"
+          }
+        },
+        "faq_list_amWhjb": {
+          "type": "faq_list",
+          "settings": {
+            "faq_question": "When should I drink it: morning, workout, or anytime?",
+            "faq_answers": "<p>Cellyte combines a full-spectrum electrolyte blend with targeted support like NAD support (NR), biotin, magnesium, and vitamins to fit women's daily routines, without added sugar.</p>"
+          }
+        },
+        "faq_list_PzE3Tf": {
+          "type": "faq_list",
+          "settings": {
+            "faq_question": "Is it sugar free and caffeine free?",
+            "faq_answers": "<p>Cellyte combines a full-spectrum electrolyte blend with targeted support like NAD support (NR), biotin, magnesium, and vitamins to fit women's daily routines, without added sugar.</p>"
+          }
+        },
+        "faq_list_XfpJfm": {
+          "type": "faq_list",
+          "settings": {
+            "faq_question": "Is it vegan and gluten free?",
+            "faq_answers": "<p>Cellyte combines a full-spectrum electrolyte blend with targeted support like NAD support (NR), biotin, magnesium, and vitamins to fit women's daily routines, without added sugar.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_list_Ake7ae",
+        "faq_list_H7MxHB",
+        "faq_list_amWhjb",
+        "faq_list_PzE3Tf",
+        "faq_list_XfpJfm"
+      ],
+      "name": "Faq Section",
+      "settings": {
+        "section_title": "FAQ",
+        "italic_word": "",
+        "faq_button_link": "shopify://policies/privacy-policy",
+        "faq_button_text": "see more",
+        "padding_top": 60,
+        "padding_bottom": 120,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "bg_type": "color",
+        "bg_color": "#f7f5fc",
+        "bg_gradient": ""
+      }
     }
   },
   "order": [
@@ -376,6 +437,7 @@
     "why_choose_section_HxJF6X",
     "img_poster_section_yFCB9p",
     "review_slider_NrAehP",
-    "use_steps_slider_6QHQTW"
+    "use_steps_slider_6QHQTW",
+    "faq_8wzz4U"
   ]
 }

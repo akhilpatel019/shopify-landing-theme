@@ -1,0 +1,216 @@
+{% render 'section-styles', section: section %}
+
+{{ 'faq.css' | asset_url | stylesheet_tag }}
+
+
+
+
+
+
+
+<section class="faq-section">
+  <div class="page_width">
+    {% assign title = section.settings.section_title %}
+    {% assign italic_word = section.settings.italic_word %}
+
+    {% if italic_word != blank %}
+      {% capture italic_tag %}<em>{{ italic_word }}</em>{% endcapture %}
+      {% assign italic_title = title | replace: italic_word, italic_tag %}
+    {% else %}
+      {% assign italic_title = title %}
+    {% endif %}
+
+    <h2 class="section_header_title text-center">
+      {{ italic_title }}
+    </h2>
+
+    <div class="faq-wrapper">
+
+
+{% for block in section.blocks %}
+     {% if block.type == 'faq_list' %}
+        <div class="faq-item {% if forloop.first %}active{% endif %}" {{block.shopify_attributes}}>
+                <button class="faq-question" type="button" aria-expanded="true" aria-controls="faq-ans-1">
+                    <h3>{{block.settings.faq_question}}</h3>
+                    <span class="faq-icon" aria-hidden="true">
+                        <svg class="icon-down" width="23" height="11" viewBox="0 0 23 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.469798 2.05694C-0.156599 1.58637 -0.156599 0.823613 0.469798 0.353045C1.0962 -0.117523 2.11154 -0.117523 2.73794 0.353045L11.2278 6.73088L19.7177 0.353045C20.3441 -0.117523 21.3594 -0.117523 21.9858 0.353045C22.6122 0.823613 22.6122 1.58637 21.9858 2.05694L11.2278 10.1387L0.469798 2.05694Z" fill="#1D0930"/>
+                        </svg>
+                        <svg class="icon-up" width="23" height="11" viewBox="0 0 23 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.9853 8.08173C22.6117 8.5523 22.6117 9.31506 21.9853 9.78563C21.3589 10.2562 20.3435 10.2562 19.7171 9.78563L11.2273 3.40779L2.73739 9.78563C2.11099 10.2562 1.09564 10.2562 0.469244 9.78563C-0.157154 9.31506 -0.157154 8.5523 0.469244 8.08173L11.2273 -4.90783e-07L21.9853 8.08173Z" fill="#1D0930"/>
+                        </svg>
+                    </span>
+                </button>
+                <div id="faq-ans-1" class="faq-answer" role="region">
+                    <div class="faq-answer-inner">
+                        <p>{{block.settings.faq_answers}}</p>
+                    </div>
+                </div>
+            </div>
+     {% endif %}
+    {% endfor %}
+
+
+    </div>
+    
+    <div class="faq-btn-wrapper">
+        {% if section.settings.faq_button_link != blank %}
+        <a href="{{section.settings.faq_button_link}}" class="btn-fill">
+           
+            {{section.settings.faq_button_text}}
+         
+        </a>
+          {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<script src="{{ 'faq.js' | asset_url }}" defer></script>
+
+
+{% schema %}
+{
+  "name": "Faq Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Faq section settings"
+    },
+    {
+      "type": "text",
+      "default": "FAQ",
+      "id": "section_title",
+      "label": "Add section title"
+    },
+
+    {
+      "type": "text",
+      "id": "italic_word",
+      "label": "Word to make italic"
+    },
+
+
+      {
+      "type": "url",
+      "label": "Add button link",
+      "id": "faq_button_link"
+    }, {
+      "type": "text",
+      "label": "Add button text",
+      "id": "faq_button_text",
+      "default": "Click me"
+    },
+
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top (desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom (desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "select",
+      "id": "bg_type",
+      "label": "Background type",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "color", "label": "Color" },
+        { "value": "gradient", "label": "Gradient" },
+        { "value": "image", "label": "Image" }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#1D0930",
+      "visible_if": "{{ section.settings.bg_type == 'color' }}"
+    },
+    {
+      "type": "color_background",
+      "id": "bg_gradient",
+      "label": "Background gradient",
+      "visible_if": "{{ section.settings.bg_type == 'gradient' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image",
+      "visible_if": "{{ section.settings.bg_type == 'image' }}"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_list",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Add question and answer"
+        },
+        {
+          "type": "text",
+          "id": "faq_question",
+          "label": "Add question",
+          "default": "What makes Cellyte Minerals “female optimized”?"
+        },
+        {
+          "type": "richtext",
+          "label": "Add answers ",
+          "id": "faq_answers",
+          "default": "<p>Cellyte combines a full-spectrum electrolyte blend with targeted support like NAD support (NR), biotin, magnesium, and vitamins to fit women's daily routines, without added sugar.</p>"
+        }
+      ]
+    }
+  ],
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Faq Section"
+    }
+  ]
+}
+{% endschema %}
